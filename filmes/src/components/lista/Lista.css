@@ -5,6 +5,7 @@
     flex-direction: column;
     align-items: center;
     padding: 35px;
+    background-color: #b51d44;
 }
 .listagem h1{
     text-transform: uppercase;

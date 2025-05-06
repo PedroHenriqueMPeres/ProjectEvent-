@@ -1,6 +1,6 @@
 /* background-color: #cc3f55; */
 header{
-    background-color: #cc3f55;
+    background-color: #ffffff;
     height: 75px;
 
     /* Borda: */
@@ -8,15 +8,18 @@ header{
     position: relative;
 }
 
-.cabecalho{
+.cabecalho {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
+    width: 80%;
+    height: 100%;
+    margin-left: 150px;
 }
 
 .cabecalho img{
     height: 55px;
+    height: 100%;
 }
 
 .link_header{
@@ -32,9 +35,32 @@ header{
     .link_header{
         margin-left: 15px;
     }
+
+    
 }
 /*Seletor
     . = classe
     # = id
     tag = tag
     🦈👟✈️🐊*/
+
+    nav.nav_header {
+        display: flex
+    ;
+    }
+
+    a.Adm {
+        margin-left: 170px;
+        margin-right: 30px;
+    }
+
+    a {
+        margin-left: 50px;
+        color: black;
+        text-decoration: none;
+    }
+
+    img.logoHeader {
+        width: 200px;
+        height: 30px;
+    }   

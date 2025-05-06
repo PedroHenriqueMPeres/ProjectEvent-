@@ -1,6 +1,6 @@
 import "./Lista.css"
-import Editar from "../../assets/img/pen-to-square-solid.svg"
-import Excluir from "../../assets/img/trash-can-regular.svg"
+import Editar from "../../assets/img/lapis.png"
+import Excluir from "../../assets/img/Lixo.png"
 const Lista =(props) => {
     return(
         <>

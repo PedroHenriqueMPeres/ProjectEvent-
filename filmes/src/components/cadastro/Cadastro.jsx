@@ -1,43 +1,39 @@
 import "./Cadastro.css"
-import Botao from "../botao/Botao"
+import Botao from "../botao/Botao";
+import Imagem from "../../assets/img/imgcadastroevento.png"
+
 const Cadastro = (props) => {
-    return(
-        <>
-        <section className="section_cadastro">
-
-            <form action="" className="layout_grid form_cadastro">
+    return (
+        <section className="layout_grid section_cadastro">
+            <div className="cadastro_titulo">
                 <h1>{props.tituloCadastro}</h1>
-
                 <hr />
+            </div>
 
-                <div className="campos_cadastros">
+            <form action="" className="form_cadastro">
 
-                    <div className="campo-cad_nome">
-                        <label htmlFor="nome">Nome</label>
-                        <input placeholder={`Digite o nome do ${props.placeholder}`} style={{color:"red"}} type="text" name="nome" />
-                    </div>
-
-                    <div className="campo-cad_genero" style={{display:props.visibilidade}}>
-                        <label htmlFor="genero">Genero</label>
-                        <select style={{color:"red"}} name="genero" id="">
-                            <option value="" disabled selected>Selecione</option>
-                            <option value="">op 1</option>
-                            <option value="">op 2</option>
-                            <option value="">op 3</option>
-                        </select>
-                    </div>
-
-                    <Botao nomeDoBotao="Cadastrar"/>
-
+                <div className="img_cadastro">
+                    <img src={Imagem} alt="Imagem do Cadastro" />
                 </div>
 
+                <div className="campos_cadastro">
+                    <div className="campo_cad_nome">
+                        <input type="text" placeholder={props.campoPlaceholder} />
+                    </div>
+
+                    <div className="campo_cad_genero" style={{ display: props.visibilidade }}>
+                        <select name="" id="">
+                            <option value="" disabled selected>Tipo Evento</option>
+                            <option value="">Esportes</option>
+                            <option value="">Digitação</option>
+                            <option value="">Batata Palha</option>
+                        </select>
+                    </div>
+                    <Botao nomeDoBotao={props.NomeDoBotao} />
+                </div>
             </form>
-
-
-
         </section>
-        
-        </>
     )
 }
+
 export default Cadastro;
