@@ -60,16 +60,5 @@
 }
 
 
-@media screen and (max-width:728px) {
-    .tabela{
-        font-size: 10px; 
-    }
-    .tabela .item_lista :nth-child(3){
-        width: 110px;
-    }
-    .listagem h1 {
-        font-size: large;
-    }
-    
-}
+
 

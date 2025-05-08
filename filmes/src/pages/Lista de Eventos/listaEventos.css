@@ -61,35 +61,8 @@
 }
 
 
-@media screen and (max-width: 768px) {
-.tabela thead{
-    display: none;
-}
 
-.item_lista td{
-    display: grid;
-    text-align: left;
-    padding: 10px 10px 10px 0;
-    grid-template-columns: 10ch auto;
-    color: rgb(0, 0, 0);
-}
 
-.item_lista td::before{
-    content: attr(data-cell)":";
-    font-weight: 700;
-    width: 80px;
-    text-align: left;
-}
-
-.item_lista te :first-child{
-    margin-bottom: 24px;
-}
-
-.item_lista te :last-child{
-    margin-bottom: 24px;
-}
-
-}
 
 section.layout_grid.listagem {
     background-color: #ffffff;
@@ -112,7 +85,7 @@ section.layout_grid.listagem {
 }
 
 a {
-    color: rgb(159, 159, 159);
+    color: rgb(0, 0, 0);
     margin-bottom: 60px;
     margin-top: 30px;
 }

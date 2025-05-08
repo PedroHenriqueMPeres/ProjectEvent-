@@ -11,7 +11,7 @@ const Lista =(props) => {
         <section className="layout_grid listagem">
             <h1>{props.tituloLista}</h1>
             <hr />
-            <div className="campo_cad_genero" style={{ display: props.visibilidade }}>
+            <div className="campo_cad_genero" style={{ display: props.visibilidades }}>
                     <select name="" id="">
                         <option value="" disabled selected>Tipo Evento</option>
                         <option value="">Esportes</option>

@@ -2,7 +2,7 @@ import "./listaEventos.css"
 import Header from "../../components/header/Header"
 import Lista from "../../components/lista/Lista"
 import Footer from "../../components/footer/Footer"
-import comentt from "../../assets/img/coment.png"
+import comentt from "../../assets/img/lapis.png"
 import Toggle from "../../components/checkbox/checkbox"
 
 
@@ -16,6 +16,7 @@ const listaEvento = () => {
         tipoEventoo= "Nome"
         Editar= {comentt}
         Excluir= {Toggle}
+        visibilidades="none"
         />
         <Footer/>
        </>  

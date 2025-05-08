@@ -59,20 +59,3 @@
     height: 410px;
 }
 
-@media screen and (max-width: 880px){
-    .campos_input{
-        flex-direction: column;
-        align-items: center;
-        
-    }
-    .banner_cadastro{
-        display: none;
-    }
-}
-
-@media screen and (max-width: 340px) {
-    .form_cadastro h1 {
-        font-size: 18px;
-    }
-    
-}

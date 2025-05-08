@@ -17,7 +17,7 @@ const Cadastro = (props) => {
 
                 <div className="campos_cadastro">
                     <div className="campo_cad_nome">
-                        <input type="text" style={{props.visibilidade}} placeholder={props.campoPlaceholder} />
+                        <input type="text" placeholder={props.campoPlaceholder} />
                     </div>
 
                     <div className="campo_cad_genero" style={{ display: props.visibilidade }}>
