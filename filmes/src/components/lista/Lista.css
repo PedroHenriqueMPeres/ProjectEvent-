@@ -9,6 +9,7 @@
 }
 .listagem h1{
     text-transform: uppercase;
+    color: white;
 }
 
 .tabela{
@@ -22,7 +23,7 @@
     margin-top: 7px;
     border-width: 2px;
     border-style: solid;
-    border-color: #73061b;
+    border-color: #ffffff;
 }
 
 .item_lista img{
@@ -43,44 +44,32 @@
 }
 .tabela .table_cabecalho th{
     width: 100px;
+    color: white;
+    border-bottom: 1px solid 
 }
 
 .item_lista td{
     padding: 20px 0 5px 0;
+    color: white;
 }
 
 .item_lista{
     text-align: center;
-
+    margin-top: 1000px;
     border-bottom: solid 1px #73061B20;
 }
 
 
-@media screen and (max-width: 768px) {
-.tabela thead{
-    display: none;
+@media screen and (max-width:728px) {
+    .tabela{
+        font-size: 10px; 
+    }
+    .tabela .item_lista :nth-child(3){
+        width: 110px;
+    }
+    .listagem h1 {
+        font-size: large;
+    }
+    
 }
 
-.item_lista td{
-    display: grid;
-    text-align: left;
-    padding: 10px 10px 10px 0;
-    grid-template-columns: 10ch auto;
-}
-
-.item_lista td::before{
-    content: attr(data-cell)":";
-    font-weight: 700;
-    width: 80px;
-    text-align: left;
-}
-
-.item_lista te :first-child{
-    margin-bottom: 24px;
-}
-
-.item_lista te :last-child{
-    margin-bottom: 24px;
-}
-
-}

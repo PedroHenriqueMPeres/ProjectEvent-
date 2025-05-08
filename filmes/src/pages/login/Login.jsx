@@ -1,4 +1,4 @@
-
+import Rotas from "../../Routes/Routes"
 import Logo from "../../assets/img/logo1.png"
 import Botao from "../../components/botao/Botao"
 import "./Login.css"
@@ -10,13 +10,13 @@ const Login = () => {
         <main className = "main_login">
             <div className = "banner"></div>
             <section className = "section_login">
-                <img src={Logo} alt="Logo do Filmoteca"x />
+                <img src={Logo} alt="Login Image"x />
                 <form action="" className="form_login">
                     
                      <div className="campos_login">
                         <div className="campo_input">
                             <label htmlFor="">Email:</label>
-                            <input type="email" name="email" placeholder="Digite seu e-mail" />
+                            <input type="email" name="email" placeholder="Digite seu e-Name" />
                         </div>
 
                         <div className="campo_input">

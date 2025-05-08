@@ -56,23 +56,15 @@
 }
 
 .section_cadastro {
-    height: 410px;
+    height: 440px;
 }
 
-@media screen and (max-width: 880px){
-    .campos_input{
-        flex-direction: column;
-        align-items: center;
-        
-    }
-    .banner_cadastro{
-        display: none;
-    }
+section.layout_grid.listagem {
+    background-color: #B51D44;
 }
 
-@media screen and (max-width: 340px) {
-    .form_cadastro h1 {
-        font-size: 18px;
-    }
-    
+a {
+    color: rgb(0 0 0);
+    margin-bottom: 60px;
+    margin-top: 30px;
 }

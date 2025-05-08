@@ -1,16 +1,16 @@
 
 import './App.css';
-// import Routes from "./Routes/Routes.js";
+import Routes from "../src/Routes/Routes";
 // import Login from './pages/login/Login.jsx';
 // import Header from './components/header/Header.jsx';
 // import Footer from './components/footer/Footer.jsx';
 // import Login from "./pages/login/Login";
-import CadastroEvento from './pages/cadastroEventos/CadastroEvento';
+// import CadastroEvento from './pages/cadastroEventos/CadastroEvento';
 
 function App() {
   return (
     <>
-    <CadastroEvento/>
+    <Routes/>
     </>
   );
 }

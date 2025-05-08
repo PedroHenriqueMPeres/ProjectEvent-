@@ -17,6 +17,7 @@ const CadastroEvento = () => {
         tituloCadastro = "Cadastro Eventos"
         campoPlaceholder = "Nome"
         NomeDoBotao = "Cadastrar"
+        visibilidade = "none"
         />
         <Lista/>
         <Footer/>

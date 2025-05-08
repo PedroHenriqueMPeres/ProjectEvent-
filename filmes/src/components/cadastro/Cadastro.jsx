@@ -1,6 +1,5 @@
 import "./Cadastro.css"
 import Botao from "../botao/Botao";
-import Imagem from "../../assets/img/imgcadastroevento.png"
 
 const Cadastro = (props) => {
     return (
@@ -13,12 +12,12 @@ const Cadastro = (props) => {
             <form action="" className="form_cadastro">
 
                 <div className="img_cadastro">
-                    <img src={Imagem} alt="Imagem do Cadastro" />
+                    <img src={props.banner_img} alt="Imagem do Cadastro" />
                 </div>
 
                 <div className="campos_cadastro">
                     <div className="campo_cad_nome">
-                        <input type="text" placeholder={props.campoPlaceholder} />
+                        <input type="text" style={{props.visibilidade}} placeholder={props.campoPlaceholder} />
                     </div>
 
                     <div className="campo_cad_genero" style={{ display: props.visibilidade }}>
