@@ -1,36 +1,35 @@
-import Rotas from "../../Routes/Routes"
-import Logo from "../../assets/img/logo1.png"
+import Logo from "../../assets/img/Logo.svg"
 import Botao from "../../components/botao/Botao"
 import "./Login.css"
 
-
 const Login = () => {
-    return(
-        
-        <main className = "main_login">
-            <div className = "banner"></div>
-            <section className = "section_login">
-                <img src={Logo} alt="Login Image"x />
+    return (
+        <main className="main_login">
+            
+            <div className="banner">
+                <div id="fundo_login"/>
+            </div>
+
+            <section className="section_login">
+                <img src={Logo} alt="Logo do Event"/>
+
                 <form action="" className="form_login">
-                    
-                     <div className="campos_login">
+
+                    <div className="campos_login">
                         <div className="campo_input">
-                            <label htmlFor="">Email:</label>
-                            <input type="email" name="email" placeholder="Digite seu e-Name" />
+                            <input type="Email" name="email" placeholder="Username"/>
                         </div>
 
                         <div className="campo_input">
-                            <label htmlFor="">Senha:</label>
-                            <input type="password" name="senha" placeholder="Digite sua senha"/>
+                            <input type="PassWord" name="senha" placeholder="PassWord" />
                         </div>
-                    </div> 
-                    <a href="https://www.youtube.com/">Esqueci minha senha</a>
-                    
-                </form> <Botao nomeDoBotao="Login"/>
+                        
+                        </div>
+                    <a href="">Esqueceu Sua Senha?</a>
+                    <Botao botao="Login"/>
+                </form>
             </section>
-            
         </main>
-       
     )
 }
 

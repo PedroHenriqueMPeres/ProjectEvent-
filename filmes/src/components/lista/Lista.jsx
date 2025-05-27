@@ -1,67 +1,64 @@
-import "./Lista.css"
-import Editar from "../../assets/img/lapis.png"
-import Excluir from "../../assets/img/Lixo.png"
-import vaector1 from "../../assets/img/Vector.png"
-import check from "../checkbox/checkbox"
-import Toggle from "../checkbox/checkbox"
+import "./Lista.css";
+import Editar from "../../assets/img/Editar.svg"
+import Excluir from "../../assets/img/Excluir.svg"
 
-const Lista =(props) => {
-    return(
+const Lista = (props) => {
+    return (
         <>
-        <section className="layout_grid listagem">
-            <h1>{props.tituloLista}</h1>
-            <hr />
-            <div className="campo_cad_genero" style={{ display: props.visibilidades }}>
-                    <select name="" id="">
-                        <option value="" disabled selected>Tipo Evento</option>
-                        <option value="">Esportes</option>
-                        <option value="">Digitação</option>
-                        <option value="">Batata Palha</option>
-                    </select>
-            </div>
-            
-            <div className="tabela">
-                <table>{/*TABELA/cabeçalho da tabela:*/}
-                    <thead>
-                        <tr className="table_cabecalho"> {/*tr => table row*/}
-                            <th>{props.tipoEventoo}</th>{/*th => table head : cabeça da tabela*/}      {/*HEAD OF THE TABLE OTC ROMAN REIGNS!!🗣️🗣️🗣️🔥🔥🔥*/}
-                            <th style={{display:props.visivel}} >Gênero</th>
-                            <th>                                                                       </th>
-                            <th>                                                                       </th>
-                            <th>                                                                       </th>
-                            <th>Editar</th>
-                            <th>Excluir</th>
-                        </tr>
-                    </thead>    
-                                
-                    <tbody> {/*tbody => corpo da tabela*/}
-                        <tr className="item_lista">
-                            
-                            <td data-cell="Nome">{props.TipoEveento}</td>
-                            <td data-cell="Genero" style={{display:props.visivel}}>Ação</td>
-                            <th>                                                                       </th>
-                            <th>                                                                       </th>
-                            <th>                                                                       </th>
-                            <td data-cell="Editar"><img src={props.Editar} alt="Imagem de uma caneta" /></td>
-                            <td data-cell="Excluir"><Toggle/></td>
-                            
-                        </tr>
-                        
-                        <tr className="item_lista" style={{display:props.visivel}}> 
-                            <td data-cell="Nome">Harry Potter e a pedra de crack</td>
-                            <td data-cell="Genero" style={{display:props.visivel}}>Científico</td>
-                            <th>                                                                       </th>
-                            <th>                                                                       </th>
-                            <th>                                                                       </th>
-                            <td data-cell="Editar"><img src={props.Editar} alt="Imagem de uma caneta" /></td>
-                            <td data-cell="Excluir"><Toggle/></td>
-                        </tr>
-                    </tbody>
+            <section className="listagem">
+                <h1>{`Lista de ${props.titulo_lista}`}</h1>
+                <hr className="linha_titulo" />
 
-                </table>
-            </div>
-        </section>
+                <div className="tabela layout_grid">
+                    <table>
+                        <thead>
+                            <tr className="tabela_cabecalho">
+                                <th>{props.titulo}</th>
+                                <th style={{ display: props.visibilidade }}>Data Evento</th>
+                                <th style={{ display: props.visibilidade }}>Tipo Evento</th>
+                                <th>Editar</th>
+                                <th>Excluir</th>
+                                <th style={{ display: props.visibilidade }}>Comentário</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            {props.lista && props.lista.length > 0 ? (
+                                props.lista.map((item) => (
+                                    <tr className="item_lista"
+                                        key={props.tipoLista == "TiposEventos" ? item.IdTipoEvento : item.IdTipoUsuario}
+                                    >
+
+                                        <td data-cell="Nome">{props.tipoLista == "TiposEventos" ? item.tituloTipoEvento : item.tituloTipoUsuario}</td>
+
+                                        <td data-cell="Tipo Evento" style={{ display: props.visibilidade}}>xxxxxxxxx</td>
+
+                                        <td data-cell="Data Evento" style={{ display: props.visibilidade}}>xxxxxxxxx</td>
+
+                                        <td data-cell="Editar" className="botao_edicao">
+                                            <img src={Editar}
+                                                alt="Caneta"
+                                                onClick={() => props.funcEditar(item)} />
+                                        </td>
+
+                                        <td data-cell="Excluir" className="botao_edicao">
+                                            <img src={Excluir}
+                                                alt="Lixeira"
+                                                onClick={() => props.funcDeletar(item)}/>
+                                        </td>
+                                    </tr>
+                                ))
+                            ) :
+                                (
+                                    <p>Nenhum Tipo Evento Encontrado</p>
+                                )
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </section>
         </>
     )
 }
+
 export default Lista;

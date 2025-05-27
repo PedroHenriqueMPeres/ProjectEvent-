@@ -1,106 +1,76 @@
-/* A mãe de todos:  */
-.main_login{
+.main_login {
     display: flex;
     height: 100vh;
-    background-color: #cc3f55;
 }
 
-/*Toda a pagina meus crias*/
+.banner {
+    background-color: #B51D44;
 
-/* Banner da esquerda: */
-.banner{
-    background-image: url("../../assets/img/undraw_login_re_4vu2\ 1.png ");
-    flex: 1;
+    width: 50%;
+
+    background-image: url("../../assets/img/fundoLogin.svg");
     background-position: center;
-    background-size: 380px;
     background-repeat: no-repeat;
 }
 
-/* Form de login da direita: */
-.section_login{
+.section_login {
+    flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    flex: 1;
-    background-color: #ffffff;
-}
-.section_login img {
-    width: 230px;
-    margin-bottom: 40px;
-    /* margin-bottom: 40px; */ /*Usar isso aqui somente em caso de usar o metodo comentado do input*/
 }
 
-.form_login{
-    color: white;
-    width: 70%;
-    height: 30%;
+.form_login {
+    color: black;
+
+    height: 50%;
+    width: 49%;
     display: flex;
     justify-content: space-around;
     align-items: center;
     flex-direction: column;
-    /* margin-bottom: 80px; */ /*Usar isso aqui somente em caso de usar o metodo comentado do input*/
-}
-.form_login h1 {
-    text-transform: uppercase;
-    /* text-align: center; */
-    /* margin-bottom: 100px; */ /*Usar isso aqui somente em caso de usar o metodo comentado do input*/
 }
 
-/* input {
-    display: flex;
-    flex-direction: column;
-    border-radius: 6px;
-    width: 400px;
-    height: 25px;
-    margin-top: 10px;
-    margin-bottom: 40px;
-    border-color: white;
-} */ /*Meus manos, essa parte de codigo eu fiz por conta, ainda funciona e fica bem semelhante ao do Figma, mais o codigo vai seguir de acordo com oque a professora fez, tmj.(esse é o metodo comentado do input)*/
-.campo_input{
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 10px;
-    border-top: none;
-    border-radius: none;
-    border-left: none;
-    border-right: none;
+.form_login a {
+    text-decoration: none;
+    color:#A6A0A0;
+    font-size: 12px;
 }
 
-.campos_login{
-    width: 70%;
+.campos_login {
+    width: 100%;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.campo_input {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 100%;
 }
 
 .campo_input input {
-    height: 30px;
-    padding: 0px 10px;
-    border-radius: 7px;
-    border: none;
-    outline: none;
-    margin-top: 7px;
-    margin-bottom: 5px;
+    height: 28px;
+    padding: 0 10px;
+
     border-top: none;
     border-left: none;
     border-right: none;
-    border-bottom: 2px solid black;
+    outline: none;
 }
 
-/**RESPONSIVIDADE😑😌**/
-/*Mê dê algumas caracterticas ao partir de um tamanho da tela*/
-@media screen and (max-width: 768px){
-    /*opx ->768px*/
+@media screen and (max-width: 768px) {
     .banner{
-        /*Desaparece o banner*/
-        display: none;
+        display: none;  
     }
-}
 
-a {
-    color: rgb(159, 159, 159);
-    margin-bottom: 60px;
-    margin-top: 30px;
-}
-
-button.botao {
-    height: 40px;
+    .section_login img {
+        width: 247px;
+        height: 47px;
+    }
 }

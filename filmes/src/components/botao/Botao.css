@@ -1,11 +1,17 @@
 .botao {
-    /* padding: 5px 100px; */
-    width: 370px;
-    height: 35px;
+    /* padding: 10px 100px; */
+    width: 356px;
+    height: 40px;
     border: none;
-    background-color: #B51D44;
     cursor: pointer;
+    background-color: #B51D44;
     color: white;
     border-radius: 6px;
-    font-weight: bolder;
+    /* Negrito */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.botao:hover{
+    background-color: #B51D44;
+    transform: scale(1.05);
 }

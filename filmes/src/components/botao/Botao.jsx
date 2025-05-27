@@ -1,7 +1,9 @@
 import "./Botao.css"
-const Botao = (promps) => {
-    return(
-        <button className="botao">{promps.nomeDoBotao}</button> //RockBotton
+
+const Botao = (props) => {
+    return (
+        <button className="botao">{props.botao}</button>
     )
 }
+
 export default Botao;
