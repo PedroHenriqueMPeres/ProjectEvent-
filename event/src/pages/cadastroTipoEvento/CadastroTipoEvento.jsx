@@ -124,6 +124,10 @@ const CadastroTipoEvento = () => {
                     campo_placeholder="Titulo"
 
                     visibilidade="none"
+                    visibilidade_data="none"
+                    visibilidade_tp_evento="none"
+                    visibilidade_instituicao="none"
+                    visibilidade_descricao="none"
 
                     botao="Cadastrar"
                     banner_img={Imagem}
@@ -143,6 +147,7 @@ const CadastroTipoEvento = () => {
 
                     funcEditar={editarTipoEvento}
                     funcDeletar={deletarTipoEvento}
+                    visibilidade2="none"
                 />
             </main>
             <Footer />

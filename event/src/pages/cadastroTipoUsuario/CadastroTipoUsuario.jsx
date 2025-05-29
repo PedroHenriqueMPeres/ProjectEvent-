@@ -42,6 +42,7 @@ const CadastroTipoUsuario = () => {
 
                 alertar("success", "Cadastro realizado com sucesso");
                 setTiposUsuario("");
+                listarTipoUsuario();
             } catch (error) {
                 alertar("error", "Erro! Entre em contato com o suporte!");
                 console.log(error);
@@ -127,7 +128,10 @@ const CadastroTipoUsuario = () => {
                     banner_img={Imagem}
 
                     visibilidade="none"
-    
+                    visibilidade_data="none"
+                    visibilidade_tp_evento="none"
+                    visibilidade_instituicao="none"
+                    visibilidade_descricao="none"
 
 
                     funcCadastro={cadastrarTipoUsuario}
@@ -138,12 +142,14 @@ const CadastroTipoUsuario = () => {
                 <Lista
                     titulo_lista="Tipo Usuário"
                     titulo="Titulo"
+                    lista={listaTipoUsuario}
                     visibilidade="none"
 
                     tipoLista="tiposUsuarios"
-                    lista={listaTipoUsuario}
+                    
                     funcDeletar={deletarTipoUsuario}
                     funcEditar={editarTipoUsuario}
+                    visibilidade2="none"
                 />
             </main>
             <Footer />
