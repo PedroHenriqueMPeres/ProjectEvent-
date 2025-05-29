@@ -141,6 +141,7 @@ const CadastroTipoEvento = () => {
                     titulo_lista="Tipo Eventos"
                     titulo="Titulo"
                     visibilidade="none"
+                    visibilidadeCP="none"
 
                     lista={listaTipoEventos}
                     tipoLista="TiposEventos"

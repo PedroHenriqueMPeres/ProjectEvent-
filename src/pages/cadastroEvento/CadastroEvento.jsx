@@ -7,7 +7,7 @@ import Footer from "../../components/footer/Footer";
 import Header from "../../components/header/Header";
 import Lista from "../../components/lista/Lista";
 import Swal from "sweetalert2";
-
+    
 const CadastroEvento = () => {
     const [listaEvento, setListaEvento] = useState([]);
     const [listaTipoEvento, setlistaTipoEvento] = useState([]);
@@ -146,17 +146,10 @@ const CadastroEvento = () => {
     }
 
     useEffect(() => {
-
+        listarEvento();
         listarTipoEvento();
     }, [listaEvento]);
 
-
-    useEffect(() => {
-        listarEvento();
-        console.log(evento);
-        
-
-    }, []);
 
     return (
         <>
@@ -201,7 +194,7 @@ const CadastroEvento = () => {
                 <Lista
                     titulo_lista="Eventos"
                     titulo="Nome"
-
+                    visibilidadeCP="none"
                     tipoLista="Eventos"
                     lista={listaEvento}
 

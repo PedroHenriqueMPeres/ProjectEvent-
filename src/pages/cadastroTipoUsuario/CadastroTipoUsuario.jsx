@@ -144,6 +144,7 @@ const CadastroTipoUsuario = () => {
                     titulo="Titulo"
                     lista={listaTipoUsuario}
                     visibilidade="none"
+                    visibilidadeCP="none"
 
                     tipoLista="tiposUsuarios"
                     
