@@ -1,17 +1,15 @@
+// src/components/toggle/Toggle.jsx
 import React from "react";
-import "./Toggle.css"
+import "./Toggle.css";
 
-const Toggle = () => {
+const Toggle = ({ presenca, manipular }) => {
     return (
-        <>
-            <div className="teste">
-                <label  className="switch">
-                    <input  type="checkbox" />
-                        <span className="slider round"></span>
-                </label>
-            </div>
-        </>
-    )
-}
+        <label className="switch">
+            <input type="checkbox" checked={presenca} onChange={manipular} />
+            <span className="slider round"></span>
+        </label>
+    );
+};
 
 export default Toggle;
+    

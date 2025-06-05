@@ -14,7 +14,7 @@ const Header = (props) => {
                 <nav className="nav_header">
                     <Link href="" className="link_header" to="/Home">Home</Link>
                     <Link href="" className="link_header" to="/Evento">Eventos</Link>
-                    <Link href="" className="link_header" to="/TipoEvento">TpEvento</Link>
+                    <Link href="" className="link_header" to="/TipoEvento">TipoEvento</Link>
                     <Link href="" className="link_header" to="/TipoUsuario">Usuários</Link>
                     <Link href="" className="link_header" to="/Listagem">Listagem</Link>
                 </nav>
