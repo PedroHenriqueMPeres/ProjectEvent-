@@ -15,13 +15,11 @@ import Informacao from "../../assets/img/Informacao.svg";
 const ListagemEventos = () => {
     const [listaEventos, setListaEventos] = useState([]);
     const [listaTipoEvento, setListaTipoEvento] = useState([]);
-    const [tipoModal, setTipoModal] = useState(""); // "descricaoEvento" ou "comentarios"
+    const [tipoModal, setTipoModal] = useState("");
     const [dadosModal, setDadosModal] = useState({});
     const [modalAberto, setModalAberto] = useState(false);
-    const [usuarioId, setUsuarioId] = useState("e17d9eb9-1aba-4fa6-845f-4ad5181c9ffd")
+    const [usuarioId, setUsuarioId] = useState("e17d9eb9-1aba-4fa6-845f-4ad5181c9ffd");
     const [filtroData, setFiltroData] = useState("todos");
-
-
 
     function filtrarEventos() {
         const hoje = new Date();
@@ -37,16 +35,14 @@ const ListagemEventos = () => {
         });
     }
 
-
     async function listarEventos() {
         try {
-            const resposta = await api.get("Eventos");
-            const todosOsEventos = resposta.data;
+            const respostaEventos = await api.get("Eventos");
+            const todosOsEventos = respostaEventos.data;
 
-            const respostaPresenca = await api.get("PresencasEventos/ListarMinhas/" + usuarioId);
+            const respostaPresenca = await api.get(`PresencasEventos/ListarMinhas/${usuarioId}`);
             const minhasPresencas = respostaPresenca.data;
 
-            // Mapeia eventos e adiciona a informação de presença
             const eventosComPresencas = todosOsEventos.map((atualEvento) => {
                 const presenca = minhasPresencas.find(p => p.idEvento === atualEvento.idEvento);
                 return {
@@ -56,19 +52,11 @@ const ListagemEventos = () => {
                 };
             });
 
-
             setListaEventos(eventosComPresencas);
-            console.log("Eventos carregados:", eventosComPresencas);
-            console.log(`Informacoes de todos os eventos:${todosOsEventos}`);
-            console.log(`Informacoes de eventos com presenca:${minhasPresencas}`);
-            console.log(`Informacoes de todos os eventos com presenca:${eventosComPresencas}`);
-
-
         } catch (error) {
             console.error("Erro ao buscar eventos:", error);
         }
     }
-
 
     async function listarTipoEvento() {
         try {
@@ -82,7 +70,6 @@ const ListagemEventos = () => {
     useEffect(() => {
         listarEventos();
         listarTipoEvento();
-        filtrarEventos();
     }, []);
 
     function abrirModal(tipo, dados) {
@@ -99,16 +86,13 @@ const ListagemEventos = () => {
 
     async function manipularPresenca(idEvento, presenca, idPresenca) {
         try {
-            if (presenca === true && idPresenca) {
-                // Desmarcar presença
+            if (presenca && idPresenca) {
                 await api.put(`PresencasEventos/${idPresenca}`, { situacao: false });
                 Swal.fire("Removido", "Sua presença foi cancelada.", "info");
-            } else if (presenca === false && idPresenca) {
-                // Confirmar presença
+            } else if (!presenca && idPresenca) {
                 await api.put(`PresencasEventos/${idPresenca}`, { situacao: true });
                 Swal.fire("Confirmado", "Sua presença foi confirmada.", "success");
             } else {
-                // Criar nova presença
                 await api.post("PresencasEventos", {
                     situacao: true,
                     idUsuario: usuarioId,
@@ -117,16 +101,12 @@ const ListagemEventos = () => {
                 Swal.fire("Confirmado", "Sua presença foi confirmada.", "success");
             }
 
-            // Atualiza a lista
             listarEventos();
         } catch (error) {
             console.error("Erro ao manipular presença:", error);
             Swal.fire("Erro", "Não foi possível atualizar sua presença.", "error");
         }
     }
-
-
-
 
     return (
         <>
@@ -143,17 +123,6 @@ const ListagemEventos = () => {
                         <option value="futuros">Somente futuros</option>
                         <option value="passados">Somente passados</option>
                     </select>
-
-                    {/* <div className="listagem_eventos">
-                        <select name="eventos" defaultValue="">
-                            <option value="" disabled>Todos os Eventos</option>
-                            {listaTipoEvento.map(tipo => (
-                                <option key={tipo.idTipoEvento} value={tipo.idTipoEvento}>
-                                    {tipo.tituloTipoEvento}
-                                </option>
-                            ))}
-                        </select>
-                    </div> */}
 
                     <div className="list">
                         <table>
@@ -195,8 +164,6 @@ const ListagemEventos = () => {
                                                     presenca={item.possuiPresenca}
                                                     manipular={() => manipularPresenca(item.idEvento, item.possuiPresenca, item.idPresenca)}
                                                 />
-
-
                                             </td>
                                         </tr>
                                     ))
@@ -219,6 +186,8 @@ const ListagemEventos = () => {
                     tipoModel={tipoModal}
                     idEvento={dadosModal.idEvento}
                     descricao={dadosModal.descricao}
+                    fecharModal={fecharModal}
+                    modalAberto={modalAberto}
                 />
             )}
         </>
